@@ -1,17 +1,9 @@
-import React, { memo ,useEffect} from 'react'
+import React, { memo ,} from 'react'
 import {DiscoverWrapper,TopMenu} from './style'
 import {discoverMenu} from "@/common/local-data"
 import { NavLink } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
-import request from '@/services/request'
 export default memo(function Discover(props) {
-    useEffect(() => {
-        request({
-            url:"/banner"
-        }).then(res=>{
-            console.log(res);
-        })
-    }, [])
     const{route}=props;
     return (
             <DiscoverWrapper>
