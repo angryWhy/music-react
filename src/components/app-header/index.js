@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { memo } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -8,7 +9,8 @@ import { Input } from 'antd'
 export default memo(function AppHeader() {
     const showItem=(item,index)=>{
         if(index<3){
-            return<NavLink to={item.link} exact>{item.title}<i className="icon sprite_01"></i></NavLink>
+            {/*NavLink加了exact，导致一级路由无法渲染CSS样式*/}
+            return<NavLink to={item.link} >{item.title}<i className="icon sprite_01"></i></NavLink>
         }
         else{
             return<a href={item.link}>{item.title}</a>
