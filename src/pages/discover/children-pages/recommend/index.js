@@ -2,11 +2,11 @@ import React, { memo, useEffect } from 'react'
 import { connect } from 'react-redux';
 import {getTopBannerAction}from './store/actionCreators'
 function Recommend(props) {
-    const{gerBanners}=props;
-    // 发送网络请求
+    const{getBanners}=props;
+    // 发送网络请求,直接来到派发
     useEffect(() => {
-        gerBanners()
-    }, [gerBanners])
+        getBanners()
+    }, [getBanners])
     return (
         <div>
             
@@ -21,7 +21,7 @@ const mapToStateProps=state=>({
 
 //中间件参数二，dispatch，派发action
 const mapToDispatchProps=dispatch=>({
-    gerBanners:()=>{
+    getBanners:()=>{
         dispatch(getTopBannerAction())
     }
     })
