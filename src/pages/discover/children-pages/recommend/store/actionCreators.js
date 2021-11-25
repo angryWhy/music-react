@@ -17,7 +17,7 @@ const changeTopBannerAction=(res)=>({
 export const getTopBannerAction=()=>{
     return dispatch=>(
         getTopBanners().then(res=>{
-            console.log(res)
+            
             //派发action，来到reducer里面
             dispatch(changeTopBannerAction(res))
         })

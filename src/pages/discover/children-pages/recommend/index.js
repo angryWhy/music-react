@@ -1,29 +1,43 @@
-import React, { memo, useEffect } from 'react'
-import { connect } from 'react-redux';
-import {getTopBannerAction}from './store/actionCreators'
+import React, { memo } from 'react'
+/*import { useDispatch,useSelector,shallowEqual } from 'react-redux';
+import {getTopBannerAction}from './store/actionCreators'*/
+import { RecommendWrapper } from './style'
+import TopBanner from './rec-chi/top-banner/index'
 function Recommend(props) {
-    const{getBanners}=props;
-    // 发送网络请求,直接来到派发
+     //传入一个回调函数，返回对象，初始化state
+
+     //useSelector弊端，每次返回对象通过==比较
+     /* const {topBanners}=useSelector((state)=>({
+        topBanners:state.recommend.topBanners
+    }),shallowEqual)
+    const dispatch=useDispatch();
     useEffect(() => {
-        getBanners()
-    }, [getBanners])
+        dispatch(getTopBannerAction());
+    }, [dispatch])*/
     return (
         <div>
-            
+       <h2> 
+           <RecommendWrapper>
+               <TopBanner>
+                   
+               </TopBanner>
+            </RecommendWrapper>
+       </h2>
         </div>
     )
 }
-//中间件参数一，包裹数据
-const mapToStateProps=state=>({
-    //取出，reducer里面，定义的state，topBanners数组
-    topBanners:state.recommend.topBanners
-})
+export default memo(Recommend)
+// //中间件参数一，包裹数据
+// const mapToStateProps=state=>({
+//     //取出，reducer里面，定义的state，topBanners数组
+//     topBanners:state.recommend.topBanners
+// })
 
-//中间件参数二，dispatch，派发action
-const mapToDispatchProps=dispatch=>({
-    getBanners:()=>{
-        dispatch(getTopBannerAction())
-    }
-    })
+// //中间件参数二，dispatch，派发action
+// const mapToDispatchProps=dispatch=>({
+//     getBanners:()=>{
+//         dispatch(getTopBannerAction())
+//     }
+//     })
 
-export default connect(mapToStateProps,mapToDispatchProps)(memo(Recommend));
+// export default connect(mapToStateProps,mapToDispatchProps)(memo(Recommend));
