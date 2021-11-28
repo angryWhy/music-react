@@ -1,8 +1,16 @@
 import React, { memo } from 'react'
 /*import { useDispatch,useSelector,shallowEqual } from 'react-redux';
 import {getTopBannerAction}from './store/actionCreators'*/
-import { RecommendWrapper } from './style'
 import TopBanner from './rec-chi/top-banner/index'
+import HotRecommendWrapper from './rec-chi/hot-recommend/index'
+import NewAlbum from './rec-chi/new-album'
+import Ranking from './rec-chi/ranking'
+import {
+    RecommendWrapper,
+    RecommendRight,
+    RecommendLeft,
+    Content
+} from './style'
 function Recommend(props) {
      //传入一个回调函数，返回对象，初始化state
 
@@ -18,9 +26,18 @@ function Recommend(props) {
         <div>
        <h2> 
            <RecommendWrapper>
-               <TopBanner>
-                   
-               </TopBanner>
+               <TopBanner/>
+               <Content className="wrap-v2">
+                   <RecommendLeft>
+                   <HotRecommendWrapper/>
+                   <NewAlbum/>
+                   <Ranking/>
+                   </RecommendLeft>
+                   <RecommendRight>
+                      
+                   </RecommendRight>
+
+               </Content>
             </RecommendWrapper>
        </h2>
         </div>
