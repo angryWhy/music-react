@@ -3,7 +3,7 @@ import React, { memo,/*useState,*/useEffect,useRef } from 'react'
 
 import ThemeHeaderRcm from '../../../../../../components/theme-header-rcm/index'
 
-
+import AlbumCover from '../../../../../../components/album-cover/index'
 import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import { getNewAlbumAction } from '../../store/actionCreators'
 
@@ -35,13 +35,18 @@ export default memo(function NewAlbum() {
                 >
                 </button>
                 <div className="album">
-                    <Carousel ref={pageRef}>
+                <Carousel ref={pageRef}>
                         {
                             [0, 1].map(item => {
                                 return (
                                     <div key={item} className="page">{
                                         newAlbum.slice(item * 5, (item +1)*5).map((album, index) => {
-                                            return <div key={album.id}>{album.name}</div>
+                                            return <AlbumCover key={album.id }
+                                                               info={album}
+                                                               size={100}
+                                                               width={118}
+                                                               bgp="-570px"  
+                                            >{album.name}</AlbumCover>
                                         }
                                         )
                                     }
