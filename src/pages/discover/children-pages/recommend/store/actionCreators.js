@@ -2,6 +2,7 @@ import * as actionTypes from './constants'
 import {getTopBanners} from '../../../../../services/recommend'
 import {getHotRecommends} from '../../../../../services/recommend'
 import {getNewAlbum} from '../../../../../services/recommend'
+import {getTopList} from '../../../../../services/recommend'
 
 
 
@@ -17,6 +18,12 @@ const changeNewAlbumAction=(res)=>(
     {
         type:actionTypes.CHANGE_NEW_ALBUMT,
         newAlbum:res.weekData
+    }
+)
+const changtopListAction=(res)=>(
+    {
+        type:actionTypes.CHANGE_TOP_LIST,
+        topList:res.weekData
     }
 )
 
@@ -50,6 +57,16 @@ export const getNewAlbumAction=(limit)=>{
         getNewAlbum(limit).then(
             res=>{
                 dispatch(changeNewAlbumAction(res))
+            }
+        )
+    )
+}
+
+export const getTopListAction=(limit)=>{
+    return dispatch=>(
+        getTopList(limit).then(
+            res=>{
+                dispatch(changtopListAction(res))
             }
         )
     )

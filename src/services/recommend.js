@@ -24,3 +24,12 @@ export function getNewAlbum(limit){
     }
   })
 }
+
+export function getTopList(limit){
+  return request({
+    url:"/top/album",
+    params:{
+      limit
+    }
+  })
+}
