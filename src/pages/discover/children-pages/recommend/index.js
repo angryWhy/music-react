@@ -4,7 +4,7 @@ import {getTopBannerAction}from './store/actionCreators'*/
 import TopBanner from './rec-chi/top-banner/index'
 import HotRecommendWrapper from './rec-chi/hot-recommend/index'
 import NewAlbum from './rec-chi/new-album'
-import Ranking from './rec-chi/ranking'
+import RecommendRanking from './rec-chi/recommend-ranking'
 import {
     RecommendWrapper,
     RecommendRight,
@@ -31,7 +31,7 @@ function Recommend(props) {
                    <RecommendLeft>
                    <HotRecommendWrapper/>
                    <NewAlbum/>
-                   <Ranking/>
+                   <RecommendRanking/>
                    </RecommendLeft>
                    <RecommendRight>
                       
