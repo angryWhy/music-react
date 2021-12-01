@@ -5,6 +5,9 @@ import TopBanner from './rec-chi/top-banner/index'
 import HotRecommendWrapper from './rec-chi/hot-recommend/index'
 import NewAlbum from './rec-chi/new-album'
 import RecommendRanking from './rec-chi/recommend-ranking'
+import Login from './rec-chi/login'
+import SettleSinger from './rec-chi/settle-singer'
+import HotAnchor from './rec-chi/hot-anchor'
 import {
     RecommendWrapper,
     RecommendRight,
@@ -34,7 +37,9 @@ function Recommend(props) {
                    <RecommendRanking/>
                    </RecommendLeft>
                    <RecommendRight>
-                      
+                      <Login/>
+                      <SettleSinger/>
+                      <HotAnchor/>
                    </RecommendRight>
 
                </Content>
