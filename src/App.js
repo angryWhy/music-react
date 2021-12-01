@@ -6,6 +6,7 @@ import AppHeader from './components/app-header';
 import AppFooter from './components/app-footer';
 import store from './store/index'
 import { Provider } from 'react-redux';
+import Player from './pages/player/app-player-bar/index'
 export default memo(function App() {
   return (
     <Provider store={store}>
@@ -14,6 +15,7 @@ export default memo(function App() {
       {renderRoutes(routes)}
       <AppFooter/>
       </HashRouter>
+      <Player/>
       </Provider>
   )
 })
