@@ -1,9 +1,33 @@
 import React, { memo } from 'react'
-import {PlaybarWrapper} from './style'
+import {Slider} from 'antd'
+import {PlaybarWrapper,Operator,PlayInfo,Control} from './style'
 export default memo(function Player() {
     return (
-        <PlaybarWrapper>
-            <h2>Player</h2>
+        <PlaybarWrapper className="sprite_player">
+            <div className="content wrap_v2">
+                <Control>
+                <button className="sprite_player prev"></button>
+                <button className="sprite_player play"></button>
+                <button className="sprite_player next"></button>
+                </Control>
+                <PlayInfo>
+                <div className="image">
+                    <a  href="/todo">
+                        <img src="https://p4.music.126.net/qX7knUIlpmbJ34UBzCCS6w==/109951164802366812.jpg?param=34y34" alt=""/>
+                    </a>
+                </div>
+                <div className="info">
+                    <div className="song">
+                        <span className="song-name">溯</span>
+                        <a className="singer-name" href="/todo">马吟吟</a>
+                    </div>
+                    <div className="progress">
+                        <Slider defaultValue={30}/>
+                    </div>
+                </div>
+                </PlayInfo>
+                <Operator></Operator>
+            </div> 
         </PlaybarWrapper>
     )
 })

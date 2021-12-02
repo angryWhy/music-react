@@ -20,7 +20,7 @@ export const PlaybarWrapper = styled.div`
     height: 47px;
   }
 `
-
+//控制相关东西
 export const Control = styled.div`
   display: flex;
   align-items: center;
