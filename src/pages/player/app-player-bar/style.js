@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-
+import pic_pro from '../../../assets/img/progress_bar.png'
+import pic_p from '../../../assets/img/sprite_icon.png'
 export const PlaybarWrapper = styled.div`
   position: fixed;
   left: 0;
@@ -84,12 +85,12 @@ export const PlayInfo = styled.div`
 
         .ant-slider-rail {
           height: 9px;
-          background: url(${require("@/assets/img/progress_bar.png")}) right 0;
+          background: url(${pic_pro}) right 0;
         }
 
         .ant-slider-track {
           height: 9px;
-          background: url(${require("@/assets/img/progress_bar.png")}) left -66px;
+          background: url(${pic_pro}) left -66px;
         }
 
         .ant-slider-handle {
@@ -97,7 +98,7 @@ export const PlayInfo = styled.div`
           height: 24px;
           border: none;
           margin-top: -7px;
-          background: url(${require("@/assets/img/sprite_icon.png")}) 0 -250px;
+          background: url(${pic_p}) 0 -250px;
         }
       }
 

@@ -23,10 +23,25 @@ export default memo(function Player() {
                     </div>
                     <div className="progress">
                         <Slider defaultValue={30}/>
+                        <div className="time">
+                            <span className="now-time">2:30</span>
+                            <span className="divider">/</span>
+                            <span className="duration">4:30</span>
+                        </div>
                     </div>
                 </div>
                 </PlayInfo>
-                <Operator></Operator>
+                <Operator>
+                    <div className="left">
+                        <button className="sprite_player btn favor"></button>
+                        <button className="sprite_player btn share"></button>
+                    </div>
+                    <div className="right sprite_player">
+                        <button className="sprite_player btn volume"></button>
+                        <button className="sprite_player btn loop"></button>
+                        <button className="sprite_player btn playlist"></button>
+                    </div>
+                </Operator>
             </div> 
         </PlaybarWrapper>
     )
