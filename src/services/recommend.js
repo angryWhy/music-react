@@ -33,3 +33,16 @@ export function getTopList(limit){
     }
   })
 }
+export function getSinger(params){
+  return request({
+    url:`/artist/detail?id=${params}`
+  })
+}
+export function getHotAnchor(limit){
+  return request({
+    url:`/toplist/artist`,
+    params:{
+      limit
+    }
+  })
+}

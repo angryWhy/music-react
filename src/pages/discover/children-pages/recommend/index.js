@@ -41,7 +41,6 @@ function Recommend(props) {
                       <SettleSinger/>
                       <HotAnchor/>
                    </RecommendRight>
-
                </Content>
             </RecommendWrapper>
        </h2>

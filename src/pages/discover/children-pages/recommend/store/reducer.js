@@ -4,7 +4,9 @@ const defaultstate={
     topBanners:[],
     hotRecommend:[],
     newAlbum:[],
-    topList:[]
+    topList:[],
+    singerList:[],
+    anchorList:[]
 }
 
 function reducer(state=defaultstate,action){
@@ -23,6 +25,10 @@ function reducer(state=defaultstate,action){
         //请求排行榜数据
         case actionTypes.CHANGE_TOP_LIST:
             return {...state,topList:action.topList}
+        case actionTypes.CHANGE_SINGER:
+            return {...state,singerList:action.singerList}
+        case actionTypes.CHANGE_HOT_ANCHOR:
+            return {...state,anchorList:action.anchorList}
         default:
             return state;
     }

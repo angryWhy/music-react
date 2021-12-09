@@ -3,6 +3,10 @@ import {getTopBanners} from '../../../../../services/recommend'
 import {getHotRecommends} from '../../../../../services/recommend'
 import {getNewAlbum} from '../../../../../services/recommend'
 import {getTopList} from '../../../../../services/recommend'
+import {getSinger} from '../../../../../services/recommend'
+import {getHotAnchor} from '../../../../../services/recommend'
+
+
 
 
 
@@ -26,6 +30,18 @@ const changtopListAction=(res)=>(
         topList:res.weekData
     }
 )
+const changeSinger=(res)=>(
+    {
+        type:actionTypes.CHANGE_SINGER,
+        singerList:res.data.artist
+    }
+)
+const changeHotAnchor=(res)=>(
+    {
+    type:actionTypes.CHANGE_HOT_ANCHOR,
+    anchorList:res.list.artists
+}
+)
 
 //创建网络请求的action，内部调用services里的axios网络求情函数
 export const getTopBannerAction=()=>{
@@ -45,7 +61,7 @@ export const getHotRecommend=(limit)=>{
         getHotRecommends(limit).then(
          
             res=>{   
-                console.log(res)
+               
                 //传入函数，执行函数，传入对象，执行reducer
                 dispatch(changeHotRecommendAction(res))
             }
@@ -69,5 +85,23 @@ export const getTopListAction=(limit)=>{
                 dispatch(changtopListAction(res))
             }
         )
+    )
+}
+export const getSingerAction=(params)=>{
+    return dispatch=>(
+        getSinger(params).then(
+            res=>{
+                dispatch(changeSinger(res))
+            }
+        )
+    )
+}
+export const getHotAnchorAction=(limit)=>{
+    return dispatch=>(
+        getHotAnchor(limit).then(
+            res=>{
+                
+            dispatch(changeHotAnchor(res))
+        })
     )
 }
