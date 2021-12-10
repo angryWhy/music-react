@@ -25,8 +25,8 @@ export default memo(function HotAnchor() {
                     {
                       anchorList.slice(0,5).map((item,index)=>{
                           return (
-                          <div className='one'>
-                                <SingerCover info={item}key={index} briefDesc={des} cover={item.picUrl} size={40} />
+                          <div className='one'key={index}>
+                                <SingerCover info={item}  briefDesc={des} cover={item.picUrl} size={40} />
                           </div>
                           )
                       }

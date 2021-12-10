@@ -11,12 +11,11 @@ export default memo(function SpecialMusic() {
         dispatch(getRankingAction())
 
     }, [dispatch])
-    console.log("排行榜",topList);
     return (
         <SpecialMusicWrap>
             <h2>云音乐特色榜</h2>
             {
-                topList.slice(0,5).map((item,index)=>{
+                topList.slice(0,4).map((item,index)=>{
                     return(
                         <div className='two' key={index}>
                             <SingerCover cover={item.coverImgUrl} 
