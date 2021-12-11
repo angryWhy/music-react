@@ -30,8 +30,6 @@ function TopBanner() {
     const bannerChange=useCallback((from,to)=>{
         setCurrentIndex(to);
     },[])
-
-
     //设置背景图
     const bgImage=topBanners[currentIndex] && (topBanners[currentIndex].imageUrl+'?imageView&blur=40x20')
 

@@ -9,8 +9,8 @@ export default memo(function SpecialMusic() {
     const {topList}=useSelector(state=>({topList:state.ranking.topList}),shallowEqual)
     useEffect(() => {
         dispatch(getRankingAction())
-
     }, [dispatch])
+    console.log(topList);
     return (
         <SpecialMusicWrap>
             <h2>云音乐特色榜</h2>

@@ -4,3 +4,8 @@ export function getTopList(){
         url:"/toplist"
     })
 }
+export function getMusicList(params){
+    return request({
+        url:`/playlist/detail?id=${params}`
+    })
+}
