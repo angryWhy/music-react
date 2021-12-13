@@ -90,3 +90,21 @@ export const discoverMenu = [
     link: "/discover/album"
   },
 ]
+export const rankinglinklist=[
+  {
+    title:"飙升榜",
+    link:"/discover/ranking/fastranking"
+  },
+  {
+    title:"新歌榜",
+    link:"/discover/ranking/newranking"
+  },
+  {
+    title:"原创榜",
+    link:"/discover/ranking/originranking"
+  },
+  {
+    title:"热歌榜",
+    link:"/discover/ranking/hotranking"
+  }
+]

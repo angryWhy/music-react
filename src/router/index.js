@@ -9,6 +9,11 @@ import Djradio from "../pages/discover/children-pages/djradio/index"
 import Ranking from "../pages/discover/children-pages/ranking/index"
 import Recommend from "../pages/discover/children-pages/recommend/index"
 import Song from "../pages/discover/children-pages/song/index"
+import TitleCover from "../components/ranking-top-cover/index"
+// import FastRanking from "../pages/discover/children-pages/ranking/ranking-child/ranking-pages/fast-ranking";
+import NewRanking from "../pages/discover/children-pages/ranking/ranking-child/ranking-pages/new-ranking";
+import HotRanking from "../pages/discover/children-pages/ranking/ranking-child/ranking-pages/hot-ranking";
+import OriginRanking from "../pages/discover/children-pages/ranking/ranking-child/ranking-pages/origin-ranking";
 
 const routes=[
     {
@@ -35,7 +40,32 @@ const routes=[
             },
             {
                 path:"/discover/ranking",
-                component:Ranking
+                component:Ranking,
+                routes:[
+                    {
+                        path: "/discover/ranking",
+                        exact: true,
+                        render: () => (
+                          <Redirect to="/discover/ranking/fastranking"/>
+                        )
+                      },
+                    {
+                        path:"/discover/ranking/fastranking",
+                        component:TitleCover
+                    },
+                    {
+                        path:"/discover/ranking/newranking",
+                        component:NewRanking
+                    },
+                    {
+                        path:"/discover/ranking/originranking",
+                        component:OriginRanking
+                    },
+                    {
+                        path:"/discover/ranking/hotranking",
+                        component:HotRanking
+                    }
+                ]
             },
             {
                 path:"/discover/songs",

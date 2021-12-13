@@ -4,6 +4,8 @@ import { SpecialMusicWrap } from './style'
 import { useDispatch } from 'react-redux'
 import { getRankingAction } from '../../store/actionCreators'
 import { useSelector,shallowEqual } from 'react-redux'
+import { rankinglinklist } from '../../../../../../common/local-data'
+import { NavLink } from 'react-router-dom'
 export default memo(function SpecialMusic() {
     const dispatch=useDispatch();
     const {topList}=useSelector(state=>({topList:state.ranking.topList}),shallowEqual)
@@ -17,6 +19,7 @@ export default memo(function SpecialMusic() {
             {
                 topList.slice(0,4).map((item,index)=>{
                     return(
+                        <NavLink to={rankinglinklist[index].link}>
                         <div className='two' key={index}>
                             <SingerCover cover={item.coverImgUrl} 
                                          size={40} 
@@ -25,6 +28,7 @@ export default memo(function SpecialMusic() {
                             
                             />
                         </div>
+                        </NavLink>
                     )
                 })
             }

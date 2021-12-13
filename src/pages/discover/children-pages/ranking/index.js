@@ -1,11 +1,14 @@
 import React, { memo } from 'react'
-import RankingList from './ranking-child/ranking-list'
+
 // import FastRanking from './ranking-child/fast-ranking'
 import SpecialMusic from './ranking-child/special-music'
 import GlobalMusic from './ranking-child/global-music'
-import TitleCover from '../../../../components/ranking-top-cover/index'
+// import RankingList from './ranking-child/ranking-list'
+// import TitleCover from '../../../../components/ranking-top-cover/index'
 import { RankingMain,RankingLeft,RankingRight } from './style'
-export default memo(function Ranking() {
+import { renderRoutes } from 'react-router-config'
+export default memo(function Ranking(props) {
+    const{route}=props;
     return (
         <RankingMain className="wrap-v2">
             <RankingLeft >
@@ -13,8 +16,7 @@ export default memo(function Ranking() {
                 <GlobalMusic/>
             </RankingLeft>
             <RankingRight>
-                <TitleCover/>
-                <RankingList/>
+                {renderRoutes(route.routes)}
             </RankingRight>
         </RankingMain>
     )

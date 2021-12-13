@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import singer_bg from "../../assets/img/sprite_table.png"
 export const SingerCoverA = styled.div`
+text-decoration:none;
 padding: 0px;
 width: 210px;
 height: ${props => (props.size)}
