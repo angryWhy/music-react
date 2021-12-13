@@ -4,7 +4,8 @@ import { shallowEqual, useSelector, useDispatch } from 'react-redux'
 import { Topwrap } from './style'
 import { Button } from 'antd';
 import {ClockCircleOutlined,PlayCircleFilled,PlusOutlined} from "@ant-design/icons"
-export default memo(function TitleCover() {
+export default memo(function TitleCover(props) {
+    const {getAction,listType,stateType,info}=props
     const dispatch = useDispatch()
     const { musicList } = useSelector(state => ({ musicList: state.ranking.musicList }), shallowEqual)
     const {topList}=useSelector(state=>({topList:state.ranking.topList}),shallowEqual)
